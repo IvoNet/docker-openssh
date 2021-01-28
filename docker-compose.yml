@@ -39,22 +39,37 @@ services:
       - backend
     restart: unless-stopped
 
-#  terminal2:
-#    image: ivonet/terminal:latest
-#    build: .
-#    environment:
-#      - PUID=1000
-#      - PGID=1000
-#      - TZ=Europe/London
-#      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
-#      - SUDO_ACCESS=true #optional
-#      - PASSWORD_ACCESS=false #optional
-#      - USER_PASSWORD=secret #optional
-##      - USER_PASSWORD_FILE=/path/to/file #optional
-#      - USER_NAME=guest #optional
-#    networks:
-#      - backend
-#    restart: unless-stopped
+  terminal2:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=fiets #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+
+  terminal3:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
 
 networks:
   frontend:
