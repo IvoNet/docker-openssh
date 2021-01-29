@@ -1,4 +1,0 @@
-FROM sspreitzer/shellinabox:latest
-
-COPY root/opt/ssh/* /root/.ssh/
-COPY root/opt/ssh/* /home/guest/.ssh/

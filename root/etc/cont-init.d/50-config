@@ -29,7 +29,7 @@ echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd
 # symlink out ssh config directory
 if [ ! -L /etc/ssh ];then
     if [ ! -f /home/$USER_NAME/ssh_host_keys/sshd_config ]; then
-        sed -i '/#PidFile/c\PidFile \/home/$USER_NAME\/sshd.pid' /etc/ssh/sshd_config
+        sed -i "/#PidFile/c\PidFile \/home\/$USER_NAME\/sshd.pid" /etc/ssh/sshd_config
         cp -a /etc/ssh/sshd_config /home/$USER_NAME/ssh_host_keys/
     fi
     rm -Rf /etc/ssh

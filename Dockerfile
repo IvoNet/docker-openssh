@@ -10,10 +10,7 @@ ENV USER_NAME=ivonet \
 RUN \
  echo "**** install runtime packages ****" && \
  apk add --no-cache --upgrade \
-	curl \
 	logrotate \
-	nano \
-	vim \
 	sudo && \
  echo "**** install openssh-server ****" && \
  if [ -z ${OPENSSH_RELEASE+x} ]; then \

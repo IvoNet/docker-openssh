@@ -1,5 +1,6 @@
 version: '3.8'
 
+
 services:
   shellinabox:
     image: ivonet/shellinabox:latest
@@ -48,14 +49,178 @@ services:
       - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
       - SUDO_ACCESS=true #optional
       - PASSWORD_ACCESS=false #optional
-      - USER_NAME=fiets #optional
+      - USER_NAME=ivonet #optional
       - USER_PASSWORD=secret #optional
     networks:
       - backend
     restart: unless-stopped
 
+  terminal4:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
 
-  terminal3:
+  terminal5:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal6:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal7:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal8:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal9:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal10:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal11:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal12:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal13:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal14:
+    image: ivonet/terminal:latest
+    build: .
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - PUBLIC_KEY_FILE=/opt/ssh/id_rsa.pub #optional
+      - SUDO_ACCESS=true #optional
+      - PASSWORD_ACCESS=false #optional
+      - USER_NAME=ivonet #optional
+      - USER_PASSWORD=secret #optional
+    networks:
+      - backend
+    restart: unless-stopped
+
+  terminal15:
     image: ivonet/terminal:latest
     build: .
     environment:
