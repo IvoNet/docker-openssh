@@ -3,8 +3,13 @@
 
 USER_NAME=${USER_NAME:-ivonet.nl}
 
-mkdir -p /home/${USER_NAME}/.ssh/
-cp /opt/ssh/* /home/${USER_NAME}/.ssh/
-chown -R "$USER_NAME":"$USER_NAME" "/home/$USER_NAME"
-chmod 600 /home/${USER_NAME}/.ssh/*
+if [ "${PASSWORD_ACCESS}" == "true" ]; then
+  rm -rf /opt/ssh
+else
+  mkdir -p /home/${USER_NAME}/.ssh/
+  cp /opt/ssh/* /home/${USER_NAME}/.ssh/
+  chown -R "$USER_NAME":"$USER_NAME" "/home/$USER_NAME"
+  chmod 600 /home/${USER_NAME}/.ssh/*
+fi
+
 
