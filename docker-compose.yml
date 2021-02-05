@@ -35,47 +35,47 @@ services:
       - backend
     restart: unless-stopped
 
-  host2:
-    image: ivonet/openssh:latest
-    build: .
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - SUDO_ACCESS=true #optional
-      - PASSWORD_ACCESS=true
-      - USER_NAME=ivonet #optional
-      - USER_PASSWORD=secret #optional
-    networks:
-      - backend
-    restart: unless-stopped
-
-  host4:
-    image: ivonet/openssh:latest
-    build: .
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - SUDO_ACCESS=true #optional
-      - PASSWORD_ACCESS=true
-      - USER_NAME=ivonet #optional
-      - USER_PASSWORD=secret #optional
-    networks:
-      - backend
-    restart: unless-stopped
-
-  host5:
-    image: ivonet/openssh:latest
-    build: .
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - SUDO_ACCESS=true #optional
-      - PASSWORD_ACCESS=true
-      - USER_NAME=ivonet #optional
-      - USER_PASSWORD=secret #optional
-    networks:
-      - backend
-    restart: unless-stopped
+#  host2:
+#    image: ivonet/openssh:latest
+#    build: .
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - SUDO_ACCESS=true #optional
+#      - PASSWORD_ACCESS=true
+#      - USER_NAME=ivonet #optional
+#      - USER_PASSWORD=secret #optional
+#    networks:
+#      - backend
+#    restart: unless-stopped
+#
+#  host4:
+#    image: ivonet/openssh:latest
+#    build: .
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - SUDO_ACCESS=true #optional
+#      - PASSWORD_ACCESS=true
+#      - USER_NAME=ivonet #optional
+#      - USER_PASSWORD=secret #optional
+#    networks:
+#      - backend
+#    restart: unless-stopped
+#
+#  host5:
+#    image: ivonet/openssh:latest
+#    build: .
+#    environment:
+#      - PUID=1000
+#      - PGID=1000
+#      - SUDO_ACCESS=true #optional
+#      - PASSWORD_ACCESS=true
+#      - USER_NAME=ivonet #optional
+#      - USER_PASSWORD=secret #optional
+#    networks:
+#      - backend
+#    restart: unless-stopped
 
 #  host6:
 #    image: ivonet/openssh:latest

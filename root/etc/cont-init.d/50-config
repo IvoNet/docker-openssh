@@ -4,7 +4,7 @@ USER_NAME=${USER_NAME:-ivonet.nl}
 echo "User name is set to $USER_NAME"
 
 # create folders
-mkdir -p /home/$USER_NAME/{.ssh,ssh_host_keys,logs/openssh}
+mkdir -p /home/$USER_NAME/{.ssh,bin}
 
 
 # set password for abc to unlock it and set sudo access
@@ -25,14 +25,9 @@ fi
 USER_PASSWORD=${USER_PASSWORD:-$(< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-8};echo;)}
 echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd
 
-# symlink out ssh config directory
+# Generating new host keys
 if [ ! -L /etc/ssh ];then
-    if [ ! -f /home/$USER_NAME/ssh_host_keys/sshd_config ]; then
-        sed -i "/#PidFile/c\PidFile \/home\/$USER_NAME\/sshd.pid" /etc/ssh/sshd_config
-        cp -a /etc/ssh/sshd_config /home/$USER_NAME/ssh_host_keys/
-    fi
-    rm -Rf /etc/ssh
-    ln -s /home/$USER_NAME/ssh_host_keys /etc/ssh
+    sed -i "s/#PidFile/PidFile/" /etc/ssh/sshd_config
     ssh-keygen -A
 fi
 
