@@ -1,9 +1,12 @@
-FROM ivonet/alpine-base:3.13
+FROM ivonet/alpine-base:3.15
 
 LABEL maintainer="@ivonet"
 
 ENV USER_NAME=ivonet \
     PS1='\u $(pwd) > '
+
+# add local files
+COPY root /
 
 RUN apk add --no-cache --upgrade \
 	sudo \
@@ -13,9 +16,8 @@ RUN apk add --no-cache --upgrade \
  && sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
  && sed -i 's/#PermitRootLogin/PermitRootLogin/' /etc/ssh/sshd_config \
  && usermod --shell /bin/bash abc \
- && rm -rf /tmp/*
-
-# add local files
-COPY root /
+ && rm -rf /tmp/* \
+ && chmod +x /etc/cont-init.d/* \
+ && chmod -Rv +x /etc/services.d/
 
 EXPOSE 22

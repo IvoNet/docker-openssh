@@ -8,13 +8,9 @@ services:
   shellinabox:
     image: ivonet/shellinabox:latest
     environment:
-      - SIAB_ADDUSER=true
-      - SIAB_USER=ivonet
-      - SIAB_GROUP=ivonet
-      - SIAB_PASSWORD=secret
-      - SIAB_SUDO=false # Enable sudo for the steppingstone?
-      - SIAB_USE_PPK=false #Use Pre-generated Public Private keys?
-      - SIAB_SSL=false
+      - USER_NAME=ivonet
+      - PASSWORD=secret
+      - SUDO_ACCESS=true
     ports:
       - 8080:4200
     networks:
