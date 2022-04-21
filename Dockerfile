@@ -1,4 +1,4 @@
-FROM ivonet/alpine-base:3.15
+FROM ivonet/ubuntu:22.04
 
 LABEL maintainer="@ivonet"
 
@@ -8,16 +8,19 @@ ENV USER_NAME=ivonet \
 # add local files
 COPY root /
 
-RUN apk add --no-cache --upgrade \
-	sudo \
+RUN apt-get update -y --no-install-recommends \
+ && apt-get install -y --no-install-recommends   \
+    sudo \
 	openssh-server \
 	openssh-sftp-server \
  && sed -i 's/#PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config \
  && sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config \
  && sed -i 's/#PermitRootLogin/PermitRootLogin/' /etc/ssh/sshd_config \
  && usermod --shell /bin/bash abc \
- && rm -rf /tmp/* \
  && chmod +x /etc/cont-init.d/* \
- && chmod -Rv +x /etc/services.d/
+ && chmod -Rv +x /etc/services.d/ \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/* \
+ && rm -rf /tmp/*
 
 EXPOSE 22

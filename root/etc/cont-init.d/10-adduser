@@ -21,6 +21,3 @@ User uid:    $(id -u "$USER_NAME")
 User gid:    $(id -g "$USER_NAME")
 -------------------------------------
 "
-chown -R "$USER_NAME":"$USER_NAME" /app
-chown -R "$USER_NAME":"$USER_NAME" /config
-chown -R "$USER_NAME":"$USER_NAME" /defaults

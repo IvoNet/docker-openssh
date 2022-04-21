@@ -23,7 +23,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - SUDO_ACCESS=true #optional
+      - SUDO_ACCESS=false #optional
       - PASSWORD_ACCESS=true # if set to false the default keys will be used
       - USER_NAME=ivonet #optional
       - USER_PASSWORD=secret #optional

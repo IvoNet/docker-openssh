@@ -1,3 +1,4 @@
 #!/command/with-contenv bash
 
+/command/s6-setuidgid root mkdir -p /run/sshd
 exec /command/s6-setuidgid root /usr/sbin/sshd -D -e -p 22
