@@ -21,6 +21,7 @@ RUN apt-get update -y --no-install-recommends \
  && chmod -Rv +x /etc/services.d/ \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/* \
- && rm -rf /tmp/*
+ && rm -rf /tmp/* \
+ && chmod -Rv -x /etc/update-motd.d/
 
 EXPOSE 22

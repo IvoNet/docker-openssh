@@ -52,3 +52,7 @@ chown -R "${USER_NAME}":"${USER_NAME}" /home/$USER_NAME
 chmod go-w /home/$USER_NAME
 chmod 700 /home/$USER_NAME/.ssh
 chmod 600 /home/$USER_NAME/.ssh/authorized_keys
+
+
+#hushlogin
+touch /home/$USER_NAME/.hushlogin
